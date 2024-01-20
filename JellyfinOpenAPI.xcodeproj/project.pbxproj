@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85BE51662B5B747700F97EEA /* JellyfinOpenAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 85BE51652B5B747700F97EEA /* JellyfinOpenAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85BE516F2B5B74A200F97EEA /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 85BE516E2B5B74A200F97EEA /* OpenAPIRuntime */; };
+		85BE51722B5B74AD00F97EEA /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 85BE51712B5B74AD00F97EEA /* OpenAPIURLSession */; };
+		85BE51742B5B74BA00F97EEA /* openapi.json in Resources */ = {isa = PBXBuildFile; fileRef = 85BE51732B5B74BA00F97EEA /* openapi.json */; };
+		85BE51782B5B74E900F97EEA /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 85BE51772B5B74E900F97EEA /* openapi-generator-config.yaml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		85BE51622B5B747700F97EEA /* JellyfinOpenAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JellyfinOpenAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		85BE51652B5B747700F97EEA /* JellyfinOpenAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JellyfinOpenAPI.h; sourceTree = "<group>"; };
+		85BE51732B5B74BA00F97EEA /* openapi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = openapi.json; sourceTree = "<group>"; };
+		85BE51772B5B74E900F97EEA /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -20,6 +24,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BE51722B5B74AD00F97EEA /* OpenAPIURLSession in Frameworks */,
+				85BE516F2B5B74A200F97EEA /* OpenAPIRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +51,8 @@
 		85BE51642B5B747700F97EEA /* JellyfinOpenAPI */ = {
 			isa = PBXGroup;
 			children = (
-				85BE51652B5B747700F97EEA /* JellyfinOpenAPI.h */,
+				85BE51732B5B74BA00F97EEA /* openapi.json */,
+				85BE51772B5B74E900F97EEA /* openapi-generator-config.yaml */,
 			);
 			path = JellyfinOpenAPI;
 			sourceTree = "<group>";
@@ -57,7 +64,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85BE51662B5B747700F97EEA /* JellyfinOpenAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +82,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				85BE51762B5B74CC00F97EEA /* PBXTargetDependency */,
 			);
 			name = JellyfinOpenAPI;
+			packageProductDependencies = (
+				85BE516E2B5B74A200F97EEA /* OpenAPIRuntime */,
+				85BE51712B5B74AD00F97EEA /* OpenAPIURLSession */,
+			);
 			productName = JellyfinOpenAPI;
 			productReference = 85BE51622B5B747700F97EEA /* JellyfinOpenAPI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -93,6 +104,7 @@
 				TargetAttributes = {
 					85BE51612B5B747700F97EEA = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -105,6 +117,11 @@
 				Base,
 			);
 			mainGroup = 85BE51582B5B747700F97EEA;
+			packageReferences = (
+				85BE516C2B5B749400F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
+				85BE516D2B5B74A200F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
+				85BE51702B5B74AD00F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
+			);
 			productRefGroup = 85BE51632B5B747700F97EEA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -119,6 +136,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BE51742B5B74BA00F97EEA /* openapi.json in Resources */,
+				85BE51782B5B74E900F97EEA /* openapi-generator-config.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +152,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		85BE51762B5B74CC00F97EEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 85BE51752B5B74CC00F97EEA /* OpenAPIGenerator */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		85BE51672B5B747700F97EEA /* Debug */ = {
@@ -263,6 +289,7 @@
 		85BE516A2B5B747700F97EEA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -286,6 +313,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -294,6 +322,7 @@
 		85BE516B2B5B747700F97EEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -344,6 +373,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		85BE516C2B5B749400F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-generator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		85BE516D2B5B74A200F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-runtime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.2;
+			};
+		};
+		85BE51702B5B74AD00F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-urlsession";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		85BE516E2B5B74A200F97EEA /* OpenAPIRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85BE516D2B5B74A200F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
+			productName = OpenAPIRuntime;
+		};
+		85BE51712B5B74AD00F97EEA /* OpenAPIURLSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85BE51702B5B74AD00F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
+			productName = OpenAPIURLSession;
+		};
+		85BE51752B5B74CC00F97EEA /* OpenAPIGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85BE516C2B5B749400F97EEA /* XCRemoteSwiftPackageReference "swift-openapi-generator" */;
+			productName = "plugin:OpenAPIGenerator";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 85BE51592B5B747700F97EEA /* Project object */;
 }
